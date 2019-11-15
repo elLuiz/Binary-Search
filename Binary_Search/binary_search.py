@@ -9,16 +9,17 @@
 def binary_search(p_list, p_left, p_right, p_elem):
 
     v_middle = (p_left + p_right) // 2
-    if p_list[v_middle] == p_elem:
-        return v_middle
-    # If the element is greater than p_list[v_middle], then it must be on the right 
-    elif p_list[v_middle] < p_elem:
-        return binary_search(p_list, v_middle + 1, p_right, p_elem)
-    # If the element is smaller than p_list[v_middle], then  it must be on the left of the list 
+    if p_right >= p_left:
+        if p_list[v_middle] == p_elem:
+            return v_middle
+        # If the element is greater than p_list[v_middle], then it must be on the right 
+        elif p_list[v_middle] < p_elem:
+            return binary_search(p_list, v_middle + 1, p_right, p_elem)
+        # If the element is smaller than p_list[v_middle], then  it must be on the left of the list 
+        else:
+            return binary_search(p_list, p_left, p_right - 1, p_elem) 
     else:
-        return binary_search(p_list, p_left, p_right - 1, p_elem) 
-
-    return -1
+        return -1
 if __name__ == "__main__":
     v_size = int(input("Enter the size of the list: "))
     v_list_elem = []
