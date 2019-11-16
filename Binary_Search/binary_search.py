@@ -3,7 +3,7 @@
 # @func: binary_search
 # param: 1st: The list/array containg integer number; 2nd: Initial position; 3rd: End of the list; 4th: The element to be searched
 # returns: If the element exists, then the functions returns the position that contains the elemnt 
-# if not found, the returns -1
+# if not found, then returns -1
 # @cost: O(log N)
 # @requirements: The list must be sorted.
 def binary_search(p_list, p_left, p_right, p_elem):
